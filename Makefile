@@ -1,0 +1,2 @@
+test:
+	powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1
