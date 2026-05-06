@@ -61,3 +61,8 @@ foreach ($pathPattern in $knownPaths) {
 New-Item -ItemType Directory -Force build | Out-Null
 gcc -std=c11 -Wall -Wextra -Werror -Iinclude src/policy.c tests/test_policy.c -o build/test_policy.exe
 ./build/test_policy.exe
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-cobalt-chain-finality-detail.ps1
+
+gcc -std=c11 -Wall -Wextra -Werror -Iinclude src/domain_review.c tests/test_domain_review.c -o build/test_domain_review.exe
+./build/test_domain_review.exe

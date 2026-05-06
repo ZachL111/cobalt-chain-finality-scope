@@ -1,0 +1,73 @@
+{
+  "repo": "cobalt-chain-finality-scope",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "goal": "Implement a C blockchain tooling project for finality event replay, using fixture event logs and golden state snapshots.",
+  "review_model": {
+    "terms": [
+      "event finality",
+      "nonce pressure",
+      "settlement risk",
+      "proof depth"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "event finality",
+      "signal": 51,
+      "slack": 38,
+      "drag": 22,
+      "confidence": 86,
+      "score": 160,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "nonce pressure",
+      "signal": 70,
+      "slack": 40,
+      "drag": 16,
+      "confidence": 67,
+      "score": 199,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "settlement risk",
+      "signal": 54,
+      "slack": 45,
+      "drag": 13,
+      "confidence": 75,
+      "score": 189,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "proof depth",
+      "signal": 80,
+      "slack": 34,
+      "drag": 27,
+      "confidence": 52,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "event finality",
+      "signal": 86,
+      "slack": 38,
+      "drag": 29,
+      "confidence": 84,
+      "score": 207,
+      "lane": "ship"
+    }
+  ]
+}

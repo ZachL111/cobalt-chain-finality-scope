@@ -1,0 +1,29 @@
+{
+  "repo": "cobalt-chain-finality-scope",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "case_count": 5,
+  "score_formula": "signal * 2 + slack + confidence - drag * 3",
+  "lane_thresholds": {
+    "ship": 140,
+    "watch": 105
+  },
+  "read_order": [
+    "README.md",
+    "fixtures/domain_review.csv",
+    "metadata/domain-review.json",
+    "examples/cobalt-chain-finality-walkthrough.md"
+  ],
+  "first_question": "Does event finality still dominate the review result?",
+  "second_question": "Is settlement risk being penalized hard enough before proof depth is trusted?",
+  "highest_case": {
+    "name": "stale",
+    "focus": "event finality",
+    "score": 207
+  },
+  "lowest_case": {
+    "name": "baseline",
+    "focus": "event finality",
+    "score": 160
+  }
+}
