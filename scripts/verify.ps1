@@ -66,3 +66,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-cobalt-chain-f
 
 gcc -std=c11 -Wall -Wextra -Werror -Iinclude src/domain_review.c tests/test_domain_review.c -o build/test_domain_review.exe
 ./build/test_domain_review.exe
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-cobalt-chain-finality-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-cobalt-chain-finality-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -1,0 +1,17 @@
+{
+  "repo": "cobalt-chain-finality-scope",
+  "thresholds": {
+    "signal": 2,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 196,
+    "watch": 103
+  },
+  "terms": [
+    "event finality",
+    "nonce pressure",
+    "settlement risk",
+    "proof depth"
+  ]
+}
